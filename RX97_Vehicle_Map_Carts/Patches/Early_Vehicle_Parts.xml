@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Early Vehicle Parts</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+										<!-- Hand cart patch -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleBuildDef[defName="RX97_Hand_Cart_Blueprint"]/costList</xpath>
+					<value>
+            				<costList>
+            					<WoodLog>120</WoodLog>
+            					<Wheel_Wood>2</Wheel_Wood>
+            					<Peg_Wood>4</Peg_Wood>
+            					<Joint_Butt>2</Joint_Butt>
+								<ComponentIndustrial>2</ComponentIndustrial>
+            				</costList>
+					</value>
+				</li>
+										<!-- Animal cart patch -->
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleBuildDef[defName="RX97_Animal_Cart_Blueprint"]/costList</xpath>
+					<value>
+            				<costList>
+            					<WoodLog>120</WoodLog>
+            					<Wheel_Wood_Large>2</Wheel_Wood_Large>
+            					<Peg_Wood>8</Peg_Wood>
+            					<Joint_Butt>6</Joint_Butt>
+								<ComponentIndustrial>6</ComponentIndustrial>
+            				</costList>
+					</value>
+				</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</operations>
+
+		</match>
+
+	</Operation>
+
+</Patch>

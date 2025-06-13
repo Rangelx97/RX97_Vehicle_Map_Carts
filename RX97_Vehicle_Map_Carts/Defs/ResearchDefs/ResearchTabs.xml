@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ResearchTabDef>
+    <defName>RX97_Vehicles</defName>
+    <label>Medieval Vehicles</label>
+  </ResearchTabDef>
+
+</Defs>

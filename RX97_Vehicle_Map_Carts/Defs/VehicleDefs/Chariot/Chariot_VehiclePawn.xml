@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseVehiclePawnWithMap">
+		<defName>RX97_Chariot</defName>
+		<label>Chariot</label>
+		<description>A battle chariot a fast, horse-drawn war vehicle designed for mobility and attack. It carries a driver and a warrior, using speed and agility to dominate the battlefield
+.\n\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Horse</description>
+
+		<graphicData>
+			<texPath>MapVehicles/Chariot/Chariot</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(4,4)</drawSize>
+			<color>(133,97,67)</color>
+		</graphicData>
+
+		<fillPercent>0.4</fillPercent>
+
+		<buildDef>RX97_Chariot_Blueprint</buildDef>
+
+		<size>(2,5)</size>
+
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Neolithic</techLevel>
+		<vehicleType>Land</vehicleType>
+
+		<statBases>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.4</ArmorRating_Heat>
+			<Flammability>1.0</Flammability>
+			<MarketValue>230</MarketValue>
+		</statBases>
+
+		<vehicleStats>
+			<Mass>85</Mass>
+			<MoveSpeed>5</MoveSpeed>
+			<CargoCapacity>0</CargoCapacity>
+			<RepairRate>1.5</RepairRate>
+			<MaximumPayload>250</MaximumPayload>
+		</vehicleStats>
+
+		<race>
+			<baseBodySize>4</baseBodySize>
+		</race>
+
+		<properties>
+			<customTerrainCosts DisallowTerrainWithTag="Water"/>
+			<customHillinessCosts>
+				<SmallHills>0.25</SmallHills>
+				<LargeHills>0.75</LargeHills>
+				<Mountainous>1.5</Mountainous>
+			</customHillinessCosts>
+			
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+
+			<roles>
+				<li>
+					<key>Driver</key>
+					<label>Driver</label>
+					<handlingTypes>Movement</handlingTypes>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
+					<hitbox>
+						<cells>
+							<li>(0,0)</li>
+						</cells>
+					</hitbox>
+					<pawnRenderer>
+						<drawOffsetNorth>(0,0,-0.5)</drawOffsetNorth>
+						<drawOffsetSouth>(0,0,0.5)</drawOffsetSouth>
+						<drawOffsetEast>(-0.7,0,0.3)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>
+
+
+<components>
+			<li>
+				<key>LeftWheel</key>
+				<label>Left Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</armor>
+					
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(0, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>RightWheel</key>
+				<label>Right Wheel</label>
+				<health>30</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+
+			<li>
+				<key>WoodenStructure</key>
+				<label>Wooden Structure</label>
+				<health>50</health>
+				<depth>External</depth>
+				<armor>
+					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				</armor>
+
+				
+			</li>
+			<li>
+				<key>Horse1</key>
+				<label>Left Horse</label>
+				<health>40</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+					<hitbox>
+					<fallthrough>false</fallthrough>
+						<cells>
+							<li>(0, 2)</li>
+							<li>(0, 1)</li>
+							<li>(0, 0)</li>
+						</cells>
+					</hitbox>
+				
+			</li>
+			<li>
+				<key>Horse2</key>
+				<label>Right Horse</label>
+				<health>40</health>
+				<depth>External</depth>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+					<hitbox>
+						<cells>
+							<li>(1, 2)</li>
+							<li>(1, 1)</li>
+							<li>(1, 0)</li>
+						</cells>
+					</hitbox>
+			</li>
+		</components>
+
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Hay</fuelType>
+				<leakDef>Filth_Blood</leakDef>
+				<fuelConsumptionRate>8</fuelConsumptionRate>
+				<fuelCapacity>200</fuelCapacity>
+			</li>
+		</comps>
+
+        <drawProperties>
+        <graphicOverlays>
+             <li>
+             <graphicData>
+                <texPath>MapVehicles/Chariot/Layer</texPath>
+                <drawSize>(4, 4)</drawSize>
+                <layer>2500</layer>
+                <shaderType>CutoutComplexPattern</shaderType>
+                <graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+				<color>(133,97,67)</color>
+             </graphicData>
+            </li>
+        </graphicOverlays>
+        </drawProperties>
+
+
+		<modExtensions>
+			<li Class="VehicleInteriors.VehicleMapProps">
+				<size>(1,1)</size>
+				<offsetNorth>(0.00390625,0,-1.5)</offsetNorth>
+				<offsetSouth>(0.001953125,0,1.5)</offsetSouth>
+				<offsetEast>(-1.5,0,0.3)</offsetEast>
+				<edgeSpaceNorth>
+					<north>0.75</north>
+					<south>0.15</south>
+					<east>0.3984375</east>
+				</edgeSpaceNorth>
+				<edgeSpaceEast>
+					<north>0.5</north>
+					<east>0.15</east>
+					<west>0.5</west>
+				</edgeSpaceEast>
+			</li>
+			<li Class="VehicleInteriors.VehicleHumanPowered"/>
+		</modExtensions>
+	</Vehicles.VehicleDef>
+</Defs>

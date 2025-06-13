@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleWithMapBaseBuildable">
+		<defName>RX97_Chariot_Blueprint</defName>
+		<label>cart</label>
+		<description>Large cart that can carry things. It is impossibly sturdy, but vulnerable to lateral attacks.\n\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Horse</description>
+		<designationCategory>VF_Vehicles</designationCategory>
+		<graphicData>
+			<texPath>MapVehicles/Chariot/Chariot</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<WorkToBuild>3200</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+
+		<size>(2,5)</size>
+
+		<costList>
+			<WoodLog>450</WoodLog>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+
+		<soundImpactDefault>BulletImpact_Wood</soundImpactDefault>
+
+		<thingToSpawn>RX97_Chariot</thingToSpawn>
+
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+</Defs>

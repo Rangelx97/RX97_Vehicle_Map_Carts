@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ResearchProjectDef>
+    <defName>RX97_TradeCarts</defName>
+    <label>Trade carts</label>
+    <description>Learn the basics of implementing the wheel and enhance it with animal muscle</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+	<tab>RX97_Vehicles</tab>
+	<prerequisites>
+      <li>Smithing</li>
+  </prerequisites>
+	<generalRules>
+  <rulesStrings>
+    <li>subject->basic carts</li>
+    <li>subject_story->found a solution for transporting goods</li>
+    <li>subject_story->trasporting goods has never been easier</li>
+    <li>subject_gerund->finding ways to improve comerce</li>
+  </rulesStrings>
+</generalRules>
+  </ResearchProjectDef>
+
+
+</Defs>

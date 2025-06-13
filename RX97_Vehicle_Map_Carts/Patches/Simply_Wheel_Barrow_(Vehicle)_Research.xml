@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Early Vehicle Parts</li>
+		</mods>
+			
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="RX97_TradeCarts"]/prerequisites</xpath>
+					<value>
+							<li>Early_Vehicle_Parts</li>
+					</value>
+				</li>
+
+			</operations>
+			
+		</match>
+
+	</Operation>
+	
+</Patch>
+ 

@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="BaseVehiclePawnWithMap">
+		<defName>RX97_Animal_Cart</defName>
+		<label>Animal Cart</label>
+		<description>Small cart that can carry things. It is sturdy.\n\n&lt;color=#bb8f04&gt;Fuel type:&lt;/color&gt; Human Power</description>
+
+
+		<graphicData>
+			<texPath>MapVehicles/Animal_Cart/Animal_Cart</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(6,9.36)</drawSize>
+			<color>(133,97,67)</color>
+		</graphicData>
+
+		<fillPercent>0.4</fillPercent>
+
+		<buildDef>RX97_Animal_Cart_Blueprint</buildDef>
+
+		<size>(4,8)</size>
+
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Transport</vehicleCategory>
+		<techLevel>Neolithic</techLevel>
+		<vehicleType>Land</vehicleType>
+
+		<statBases>
+			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.4</ArmorRating_Heat>
+			<Flammability>1.0</Flammability>
+			<MarketValue>230</MarketValue>
+		</statBases>
+
+		<vehicleStats>
+			<Mass>85</Mass>
+			<MoveSpeed>3</MoveSpeed>
+			<CargoCapacity>0</CargoCapacity>
+			<RepairRate>1.5</RepairRate>
+			<MaximumPayload>600</MaximumPayload>
+		</vehicleStats>
+
+		<race>
+			<baseBodySize>4</baseBodySize>
+		</race>
+
+		<properties>
+			<customTerrainCosts DisallowTerrainWithTag="Water"/>
+			<customHillinessCosts>
+				<SmallHills>0.25</SmallHills>
+				<LargeHills>0.75</LargeHills>
+				<Mountainous>1.5</Mountainous>
+			</customHillinessCosts>
+			
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+
+			<roles>
+				<li>
+					<key>Driver</key>
+					<label>Driver</label>
+					<handlingTypes>Movement</handlingTypes>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<exposed>true</exposed>
+					<hitbox>
+						<cells>
+							<li>(0,0)</li>
+						</cells>
+					</hitbox>
+					<pawnRenderer>
+						<layer>2501</layer>
+						<drawOffsetNorth>(0.5,0,0)</drawOffsetNorth>
+						<drawOffsetSouth>(-0.5,0,1)</drawOffsetSouth>
+						<drawOffsetEast>(-0.5,0,1)</drawOffsetEast>
+					</pawnRenderer>
+				</li>
+			</roles>
+		</properties>
+
+
+		<components>
+			<li>
+				<key>FrontLeftWheel</key>
+				<label>Front Left Wheel</label>
+				<health>40</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</armor>
+					
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontRightWheel</key>
+				<label>Front Right Wheel</label>
+				<health>40</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(2, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackLeftWheel</key>
+				<label>Back Left Wheel</label>
+				<health>40</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, -3)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightWheel</key>
+				<label>Back Right Wheel</label>
+				<health>40</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</armor>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(2, -3)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+
+			<li>
+				<key>WoodenStructure</key>
+				<label>Wooden Structure</label>
+				<health>120</health>
+				<depth>External</depth>
+				<armor>
+					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				</armor>
+
+				
+			</li>
+			<li>
+				<key>Horse1</key>
+				<label>Horse back L</label>
+				<health>40</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+					<hitbox>
+					<fallthrough>false</fallthrough>
+						<cells>
+							<li>(0, 2)</li>
+						</cells>
+					</hitbox>
+				
+			</li>
+			<li>
+				<key>Horse2</key>
+				<label>Horse back R</label>
+				<health>40</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+					<hitbox>
+						<cells>
+							<li>(1, 2)</li>
+						</cells>
+					</hitbox>
+			</li>
+						<li>
+				<key>Horse3</key>
+				<label>Horse front L</label>
+				<health>40</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+
+					<hitbox>
+						<cells>
+							<li>(0, 3)</li>
+						</cells>
+					</hitbox>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+			</li>
+			<li>
+				<key>Horse4</key>
+				<label>Horse front R</label>
+				<health>40</health>
+				<depth>External</depth>
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+					<hitbox>
+						<cells>
+							<li>(1, 3)</li>
+						</cells>
+					</hitbox>
+			</li>
+
+		</components>
+
+        <drawProperties>
+        <graphicOverlays>
+             <li>
+             <graphicData>
+                <texPath>MapVehicles/Animal_Cart/Layer</texPath>
+                <drawSize>(6, 9.36)</drawSize>
+                <layer>2500</layer>
+                <shaderType>CutoutComplexPattern</shaderType>
+                <graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+				<color>(133,97,67)</color>
+             </graphicData>
+            </li>
+             <li>
+             <graphicData>
+                <texPath>MapVehicles/Animal_Cart/Layer2</texPath>
+                <drawSize>(6, 9.36)</drawSize>
+                <layer>0</layer>
+                <shaderType>CutoutComplexPattern</shaderType>
+                <graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+				<color>(133,97,67)</color>
+             </graphicData>
+            </li>
+        </graphicOverlays>
+        </drawProperties>
+
+
+		<modExtensions>
+			<li Class="VehicleInteriors.VehicleMapProps">
+				<size>(2,3)</size>
+				<offsetNorth>(0.00390625,0,-2.8)</offsetNorth>
+				<offsetSouth>(0.001953125,0,2.4)</offsetSouth>
+				<offsetEast>(-2.6,0,-0.1)</offsetEast>
+				<edgeSpaceNorth>
+					<north>0.75</north>
+					<south>0.15</south>
+					<east>0.3984375</east>
+				</edgeSpaceNorth>
+				<edgeSpaceEast>
+					<north>0.5</north>
+					<east>0.15</east>
+					<west>0.5</west>
+				</edgeSpaceEast>
+			</li>
+			<li Class="VehicleInteriors.VehicleHumanPowered"/>
+		</modExtensions>
+	</Vehicles.VehicleDef>
+</Defs>

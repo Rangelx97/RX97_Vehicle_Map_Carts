@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RX97 Carts</name>
+	<packageId>RX97.MapVehiclesCarts</packageId>
+	<author>Rangelx97</author>
+	<description>Adds carts
+	</description>
+
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+
+	<modDependencies>
+		<li>
+			<packageId>OELS.VehicleMapFramework</packageId>
+			<displayName>Vehicle Map Framework</displayName>
+			<downloadUrl>https://github.com/oelsart/VehicleMapFramework</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>OELS.VehicleMapFramework</li>
+	</loadAfter>
+</ModMetaData>
