@@ -18,7 +18,6 @@
             					<Wheel_Wood>2</Wheel_Wood>
             					<Peg_Wood>4</Peg_Wood>
             					<Joint_Butt>2</Joint_Butt>
-								<ComponentIndustrial>2</ComponentIndustrial>
             				</costList>
 					</value>
 				</li>
@@ -32,11 +31,10 @@
             					<Wheel_Wood_Large>2</Wheel_Wood_Large>
             					<Peg_Wood>8</Peg_Wood>
             					<Joint_Butt>6</Joint_Butt>
-								<ComponentIndustrial>6</ComponentIndustrial>
             				</costList>
 					</value>
 				</li>
-
+							<!-- Animal cart patch -->
 
 
 
