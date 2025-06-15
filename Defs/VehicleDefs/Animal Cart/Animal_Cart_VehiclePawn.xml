@@ -291,7 +291,6 @@
                 <layer>0</layer>
                 <shaderType>CutoutComplexPattern</shaderType>
                 <graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
-				<color>(133,97,67)</color>
              </graphicData>
             </li>
         </graphicOverlays>
